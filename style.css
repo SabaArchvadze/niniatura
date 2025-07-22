@@ -1,0 +1,450 @@
+body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevents default body scrolling */
+            background-color: #111827; /* Dark background */
+        }
+
+        .frame-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 5rem;
+            font-weight: bold;
+            color: white;
+            opacity: 0;
+            background-size: cover;
+            background-position: center;
+            /* Add a subtle overlay to make text more readable */
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
+        }
+
+        .frame.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 0.9rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 8px 16px;
+            border-radius: 20px;
+            z-index: 100;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-2px);
+            }
+        }
+
+        .frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 5rem;
+            font-weight: bold;
+            color: white;
+            opacity: 0;
+            background-size: cover;
+            background-position: center;
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
+        }
+
+        .frame.active {
+            opacity: 1;
+            z-index: 1;
+        }
+        
+        /* Arrow Navigation Styles */
+        .arrow-nav {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 50;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease, opacity 0.5s ease;
+        }
+
+        .arrow-nav:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .arrow-nav.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #prev-arrow {
+            left: 20px;
+        }
+
+        #next-arrow {
+            right: 20px;
+        }
+
+        .arrow-nav svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+            stroke-width: 2;
+        }
+
+        /* Header Styles */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 2rem; /* Vertical and horizontal padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    pointer-events: none; /* Allows clicks to pass through the empty parts of the header */
+}
+
+.header-title, .hamburger-menu {
+    pointer-events: auto; /* Makes the title and button clickable again */
+    color: #50E3C2; /* A teal color similar to your example */
+    text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.6); /* Adds a shadow for better readability */
+    transition: opacity 0.3s ease;
+}
+
+.header-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.hamburger-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger-menu svg {
+    width: 50px; /* Set a specific size for the icon */
+    height: 50px;
+}
+
+/* --- Root Variables for Menu --- */
+:root {
+    --theme-green: #50E3C2;
+    --ease-out-cubic: cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+/* --- Required updates for existing elements --- */
+
+/* Ensures the hamburger icon stays above the menu overlay */
+.hamburger-menu {
+    z-index: 1001;
+}
+
+/* Allows the background content to blur smoothly */
+.frame-container, .arrow-nav, .site-header {
+    transition: filter 0.5s ease;
+}
+
+/* Applies the blur effect when the menu is open */
+body.nav-open .frame-container,
+body.nav-open .arrow-nav,
+body.nav-open .header-title {
+    filter: blur(5px);
+}
+
+
+/* --- Styles for the New Navigation Overlay --- */
+
+/* Main overlay container */
+#nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: background-color 0.5s var(--ease-out-cubic), opacity 0.5s var(--ease-out-cubic), visibility 0s 0.5s;
+}
+
+/* Active state for the overlay */
+#nav-overlay.active {
+    visibility: visible;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.95);
+    transition: background-color 0.5s var(--ease-out-cubic), opacity 0.5s var(--ease-out-cubic);
+}
+
+/* Top bar inside the menu (for "MENU" title and close button) */
+.nav-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 1.5rem 2rem;
+}
+
+.nav-top h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--theme-green);
+}
+
+.close-nav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+.close-nav-btn svg {
+     width: 50px; /* Matches your hamburger icon size */
+     height: 50px;
+}
+
+/* Navigation links styling */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 80%;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    overflow: hidden; /* Crucial for slide-in animation */
+}
+
+.nav-item .line {
+    height: 5px;
+    background-color: white;
+    flex-grow: 1;
+    transform: scaleX(0); /* Initially hidden */
+    transition: transform 0.8s var(--ease-out-cubic);
+}
+
+.nav-item a {
+    font-size: clamp(2.5rem, 10vw, 5rem);
+    font-weight: 900;
+    color: white;
+    text-decoration: none;
+    padding: 0 2rem;
+    transform: translateY(110%);
+    /* The change is in the 'color' part of this line */
+    transition: transform 0.8s var(--ease-out-cubic), color 0.2s ease-in;
+}
+
+.nav-item a:hover {
+    color: var(--theme-green);
+}
+
+/* Animation triggers and delays */
+#nav-overlay.active .nav-item .line {
+    transform: scaleX(1); /* Animate line in */
+}
+#nav-overlay.active .nav-item a {
+    transform: translateY(0); /* Animate text in */
+}
+
+/* FASTER Staggered animation delays */
+#nav-overlay.active .nav-item:nth-child(1) a,
+#nav-overlay.active .nav-item:nth-child(1) .line {
+    transition-delay: 0.1s;
+}
+#nav-overlay.active .nav-item:nth-child(2) a,
+#nav-overlay.active .nav-item:nth-child(2) .line {
+    transition-delay: 0.15s;
+}
+#nav-overlay.active .nav-item:nth-child(3) a,
+#nav-overlay.active .nav-item:nth-child(3) .line {
+    transition-delay: 0.2s;
+}
+
+/* ==============================================
+=== NEW STYLES FOR GALLERY & ABOUT PAGES ===
+==============================================
+*/
+
+/* --- General Page Overlay Styling --- */
+.page-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 1002; /* Higher than nav menu to appear on top */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s var(--ease-out-cubic), visibility 0s 0.5s;
+    overflow: hidden;
+}
+
+.page-overlay.active {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+.page-overlay .close-page-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+.page-overlay .close-page-btn svg {
+    width: 50px;
+    height: 50px;
+}
+
+/* --- Gallery Page Specific Styles --- */
+.gallery-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-link {
+    position: absolute;
+    color: white;
+    font-size: clamp(2rem, 8vw, 4rem);
+    font-weight: 900;
+    text-decoration: none;
+    transition: color 0.2s ease-out;
+}
+.gallery-link:hover {
+    color: var(--theme-green);
+}
+
+/* --- About Me Page Specific Styles --- */
+.about-content {
+    display: flex;
+    height: 100%;
+    padding: 8rem 4rem 4rem; /* Top, sides, bottom */
+    gap: 4rem;
+}
+
+.about-left {
+    flex-basis: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-image-container {
+    width: 100%;
+    padding-bottom: 100%; /* Creates a square aspect ratio */
+    position: relative;
+    transform: rotate(-90deg);
+}
+
+.about-image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the square area */
+}
+
+.about-socials {
+    margin-top: 2rem;
+    color: white;
+}
+.about-socials p {
+    margin: 1rem 0 0.2rem;
+    font-weight: 700;
+    color: var(--theme-green);
+}
+.about-socials a {
+    color: white;
+    text-decoration: none;
+}
+
+.about-right {
+    flex-basis: 65%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Important for scrolling */
+}
+
+.about-header {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--theme-green);
+    flex-shrink: 0; /* Prevents header from shrinking */
+}
+
+.about-text-scroll {
+    overflow-y: auto; /* Enables vertical scrolling */
+    color: white;
+    padding-right: 2rem; /* Prevents scrollbar from touching text */
+}
+
+.about-text-scroll h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2rem;
+}
+.about-text-scroll h5 {
+    font-weight: 700;
+    color: var(--theme-green);
+    margin-top: 1rem;
+}
+.about-text-scroll p {
+    line-height: 1.6;
+}

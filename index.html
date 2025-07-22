@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolling Frames Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-title">
+            NINIATURA
+        </div>
+        <button class="hamburger-menu" aria-label="Open menu">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    </header>
+
+    <div class="frame-container">
+        </div>
+
+    <div id="prev-arrow" class="arrow-nav">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+    </div>
+    <div id="next-arrow" class="arrow-nav">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+    </div>
+    
+    <div id="nav-overlay">
+        <div class="nav-top">
+             <button class="close-nav-btn" aria-label="Close menu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+            <h2>MENU</h2>
+        </div>
+        <ul class="nav-links">
+            <li class="nav-item">
+                <a href="#" data-target-frame="0">HOME</a>
+                <span class="line"></span>
+            </li>
+            <li class="nav-item">
+                <span class="line"></span>
+                <a href="#" data-target-frame="5">GALLERY</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" data-target-frame="10">ABOUT ME</a>
+                <span class="line"></span>
+            </li>
+        </ul>
+    </div>
+    <!-- New: Gallery Page HTML -->
+<div id="gallery-page" class="page-overlay">
+    <div class="nav-top">
+        <button class="close-page-btn" data-target-page="gallery-page" aria-label="Close Gallery">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+        <h2>GALLERY</h2>
+    </div>
+    <div class="gallery-content">
+        <a href="#" class="gallery-link" style="top: 25%; left: 15%;">3D</a>
+        <a href="#" class="gallery-link" style="top: 45%; left: 25%;">BRANDING</a>
+        <a href="#" class="gallery-link" style="top: 65%; left: 55%;">PHOTO</a>
+        <a href="#" class="gallery-link" style="top: 80%; left: 70%;">DUMP</a>
+    </div>
+</div>
+
+<!-- New: About Me Page HTML -->
+<div id="about-page" class="page-overlay">
+    <div class="nav-top">
+        <button class="close-page-btn" data-target-page="about-page" aria-label="Close About Me">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+    </div>
+    <div class="about-content">
+        <div class="about-left">
+            <div class="about-image-container">
+                <img src="assets/pfp.png" alt="A portrait of the site owner">
+            </div>
+            <div class="about-socials">
+                <p>E-MAIL</p>
+                <a href="mailto:niniaturra@gmail.com">niniaturra@gmail.com</a>
+                <p>INSTAGRAM</p>
+                <a href="#">@niniaturra</a>
+                <p>LINKEDIN</p>
+                <a href="#">Nini Archvadze</a>
+            </div>
+        </div>
+        <div class="about-right">
+            <h3 class="about-header">ME ME ME ME ME ME</h3>
+                <div class="about-text-scroll">
+                    <h4>I'm Nini Archvadze</h4>
+                    <p>A Visual Communications student. My main interest area is everything 3D Design and Animation. Photography, Graphic Design & Branding all rank second place.</p>
+                
+                    <h4>My Skillset</h4>
+                    <h5>ADVANCED</h5>
+                    <p>Adobe Photoshop<br>Adobe Illustrator</p>
+                
+                    <h5>INTERMEDIATE</h5>
+                    <p>Blender 3D<br>Adobe Premiere Pro<br>Adobe After Effects</p>
+
+                    <h5>BEGINNER</h5>
+                    <p>Nomad Sculpt</p>
+
+                    <p>I enjoy working in creative teams. I love learning new things. And I'm very passionate about what I do!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-indicator">Scroll to Explore</div>
+
+</body>
+</html>
