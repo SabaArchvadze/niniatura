@@ -21,31 +21,31 @@ document.addEventListener('DOMContentLoaded', () => {
     // All info about frames, images, and buttons is now here for easy editing.
     const frameData = [
         // Checkpoint 1
-        { imageUrl: 'assets/0001.png', isCheckpoint: true, buttons: [
+        { imageUrl: 'assets/0001.webp', isCheckpoint: true, buttons: [
             { id: 'phone-1', text: 'Phone'},
             { id: 'burger-1', text: 'Burger'},
             { id: 'unique-1', text: 'Monitor'}
         ]},
-        { imageUrl: 'assets/0002.png' }, { imageUrl: 'assets/0003.png' },
-        { imageUrl: 'assets/0004.png' }, { imageUrl: 'assets/0005.png' },
+        { imageUrl: 'assets/0002.webp' }, { imageUrl: 'assets/0003.webp' },
+        { imageUrl: 'assets/0004.webp' }, { imageUrl: 'assets/0005.webp' },
         // Checkpoint 2
-        { imageUrl: 'assets/0006.png', isCheckpoint: true, buttons: [
+        { imageUrl: 'assets/0006.webp', isCheckpoint: true, buttons: [
             { id: 'phone-2', text: 'Phone'},
             { id: 'burger-2', text: 'Burger'},
             { id: 'unique-2', text: 'Unique Item 2'}
         ]},
-        { imageUrl: 'assets/0007.png' }, { imageUrl: 'assets/0008.png' },
-        { imageUrl: 'assets/0009.png' }, { imageUrl: 'assets/0010.png' },
+        { imageUrl: 'assets/0007.webp' }, { imageUrl: 'assets/0008.webp' },
+        { imageUrl: 'assets/0009.webp' }, { imageUrl: 'assets/0010.webp' },
         // Checkpoint 3
-        { imageUrl: 'assets/0011.png', isCheckpoint: true, buttons: [
+        { imageUrl: 'assets/0011.webp', isCheckpoint: true, buttons: [
             { id: 'phone-3', text: 'Phone'},
             { id: 'burger-3', text: 'Burger'},
             { id: 'unique-3', text: 'Unique Item 3'}
         ]},
-        { imageUrl: 'assets/0012.png' }, { imageUrl: 'assets/0013.png' },
-        { imageUrl: 'assets/0014.png' }, { imageUrl: 'assets/0015.png' },
+        { imageUrl: 'assets/0012.webp' }, { imageUrl: 'assets/0013.webp' },
+        { imageUrl: 'assets/0014.webp' }, { imageUrl: 'assets/0015.webp' },
         // Checkpoint 4
-        { imageUrl: 'assets/0016.png', isCheckpoint: true, buttons: [
+        { imageUrl: 'assets/0016.webp', isCheckpoint: true, buttons: [
             { id: 'phone-4', text: 'Phone'},
             { id: 'burger-4', text: 'Burger'}
         ]}
