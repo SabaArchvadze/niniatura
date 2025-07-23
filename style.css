@@ -659,24 +659,18 @@ body.nav-open .header-title {
         left: 63%;
         padding: 15px 15px;
     }
-
-    .site-header {
-        padding-right: 43%;
-    }
-
-    #next-arrow {
-         right: 42%;
-    }
-
-    /* --- FIX 2: Make frames larger --- */
+    
     .frame img {
         object-fit: contain;
-        /* This is your new size control. 1.2 = 120% size.
-           Increase it to make frames bigger, decrease to make them smaller. */
         transform: scale(2.3);
     }
+    .frame:not(:has(img)) {
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform: scale(2.3); /* This MUST match the scale value above */
+    }
 
-     body {
-        overflow-x: hidden;
+    html, body {
+        overflow: hidden;
     }
 }
