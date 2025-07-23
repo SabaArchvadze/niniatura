@@ -3,7 +3,7 @@ body {
             margin: 0;
             padding: 0;
             overflow: hidden; /* Prevents default body scrolling */
-            background-color: #111827; /* Dark background */
+            background-color: black;
         }
 
         .frame-container {
@@ -449,31 +449,234 @@ body.nav-open .header-title {
     line-height: 1.6;
 }
 
-/* This container holds the buttons but doesn't block clicks */
-#clickable-items-container {
-    position: fixed;
+.frame img {
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 50; /* Above frames, below arrows */
-    pointer-events: none; /* Allows clicks to pass through */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* The key property */
+    z-index: 1; /* Places the image below the buttons */
 }
 
+/* This new container will hold the buttons and sit perfectly over the image */
+.button-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* On top of the image */
+    pointer-events: none; /* Allows mouse wheel to scroll through empty space */
+}
+
+/* Ensure clickable-items are still clickable */
 .clickable-item {
-    position: absolute; /* Allows you to position them freely */
-    display: none; /* Hidden by default */
-    padding: 10px 20px;
-    background-color: rgba(255, 0, 128, 0.7); /* Bright pink so you can see them */
+    /* Positioning */
+    position: absolute; /* This is essential for top/left to work */
+
+    /* Visibility & Style (so you can see them) */
+    opacity: 0;
+    background-color: rgba(22, 222, 22, 0.5); /* A green color for visibility */
     color: white;
-    border: 2px solid white;
-    border-radius: 8px;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 14px;
+    
+    /* Interactivity */
     cursor: pointer;
-    pointer-events: auto; /* Makes the buttons themselves clickable */
-    z-index: 51;
+    pointer-events: auto; /* This ensures the button is always clickable */
 }
 
-/* This class will be added by JavaScript to show the buttons */
-.clickable-item.visible {
-    display: block;
+#phone-1 {
+    top: 54%;
+    left: 64%;
+}
+#burger-1 {
+    top: 45%;
+    left: 31.5%;
+    padding: 10px 6px;
+}
+#unique-1 {
+    top: 23%;
+    left: 32%;
+    padding: 60px 90px;
+}
+#phone-2 {
+    top: 51%;
+    left: 33%;
+}
+#burger-2 {
+    top: 41.5%;
+    left: 48%;
+    padding: 12px 5px;
+}
+#unique-2 {
+    top: 25%;
+    left: 60%;
+    transform: rotate(7deg);
+    padding: 220px 50px;
+}
+#phone-3 {
+    top: 70%;
+    left: 49.7%;
+    padding: 5px 4px;
+}
+#burger-3 {
+    top: 57%;
+    left: 41%;
+    padding: 12px 5px;
+}
+#unique-3 {
+    top: 30%;
+    left: 62%;
+    transform: rotate(7deg);
+    padding: 50px 50px;
+}
+#phone-4 {
+    top: 58%;
+    left: 41.5%;
+    padding: 5px 3px;
+}
+#burger-4 {
+    top: 68%;
+    left: 57%;
+    padding: 12px 4px;
+}
+
+/* --- Tablet Adjustments (768px to 1024px) --- */
+@media (max-width: 1024px) {
+    
+    #phone-1 {
+        top: 53%; 
+        left: 70%;
+    }
+    #burger-1 {
+        top: 45%; 
+        left: 22.5%;
+    }
+    #unique-1{
+        top:25%;
+        left:23%;
+    }
+
+    #phone-2 {
+        top: 50%; 
+        left: 24.5%;
+    }
+    #burger-2 {
+        top: 42%; 
+        left: 46.5%;
+    }
+    #unique-2 {
+        top: 28%;
+        left: 64%;
+        padding: 180px 40px;
+    }
+
+    #phone-3 {
+        top: 67%; 
+        left: 49%;
+    }
+    #burger-3 {
+        top: 56%; 
+        left: 36.5%;
+    }
+    #unique-3{
+        left:66%;
+        top:32%;
+    }
+
+    #phone-4 {
+        top: 57%; 
+        left: 37.5%;
+    }
+    #burger-4 {
+        top: 65%; 
+        left: 59.5%;
+    }
+}
+
+
+/* --- Phone Adjustments (< 767px) --- */
+@media (max-width: 767px) {
+
+    #phone-1 {
+        top: 53%; 
+        left: 79.5%;
+        padding: 15px 15px;
+    }
+    #burger-1 {
+        top: 45%; 
+        left: 9%;
+        padding: 15px 15px;
+    }
+    #unique-1{
+        top:25%;
+        left:10%;
+        padding: 65px 105px;
+    }
+
+    #phone-2 {
+        top: 49%; 
+        left: 13%;
+        padding: 15px 15px;
+    }
+    #burger-2 {
+        top: 42%; 
+        left: 44%;
+        padding: 15px 15px;
+    }
+    #unique-2 {
+        top: 28%;
+        left: 68%;
+        padding: 190px 65px; 
+    }
+
+    #phone-3 {
+        top: 66%; 
+        left: 48%;
+        padding: 15px 15px;
+    }
+    #burger-3 {
+        top: 56%; 
+        left: 29%;
+        padding: 15px 15px;
+    }
+    #unique-3{
+        left:75%;
+        top:32%;
+    }
+
+    #phone-4 {
+        top: 56%; 
+        left: 30%;
+        padding: 15px 15px;
+    }
+    #burger-4 {
+        top: 65%; 
+        left: 63%;
+        padding: 15px 15px;
+    }
+
+    .site-header {
+        padding-right: 43%;
+    }
+
+    #next-arrow {
+         right: 42%;
+    }
+
+    /* --- FIX 2: Make frames larger --- */
+    .frame img {
+        object-fit: contain;
+        /* This is your new size control. 1.2 = 120% size.
+           Increase it to make frames bigger, decrease to make them smaller. */
+        transform: scale(2.3);
+    }
+
+     body {
+        overflow-x: hidden;
+    }
 }
