@@ -545,6 +545,10 @@ body.nav-open .header-title {
     padding: 12px 4px;
 }
 
+.mobile-indicator {
+    display: none;
+}
+
 
 /* --- Tablet Adjustments (768px to 1024px) --- */
 @media (max-width: 1024px) {
@@ -673,5 +677,15 @@ body.nav-open .header-title {
 
     html, body {
         overflow: hidden;
+    }
+
+    .arrow-nav{
+        top:73%;
+    }
+    .desktop-indicator {
+        display: none;
+    }
+    .mobile-indicator {
+        display: block;
     }
 }
