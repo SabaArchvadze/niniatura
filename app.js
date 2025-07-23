@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextArrow = document.getElementById('next-arrow');
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const navOverlay = document.getElementById('nav-overlay');
+    const allClickableItems = document.querySelectorAll('.clickable-item');
     
     // JS FIX #1: Select the close button inside the main nav menu
     const closeNavBtn = document.querySelector('.close-nav-btn'); 
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         currentFrame = newIndex;
         updateArrowVisibility();
+        updateClickableButtons(currentFrame);
     }
 
     function updateArrowVisibility() {
@@ -111,6 +113,18 @@ document.addEventListener('DOMContentLoaded', () => {
         pageElement.classList.add('active');
     }
 
+    function updateClickableButtons(frameIndex) {
+    // First, hide all buttons
+    allClickableItems.forEach(item => item.classList.remove('visible'));
+
+    // Then, find and show only the buttons for the current checkpoint
+    const isCheckpoint = checkpoints.includes(frameIndex);
+    if (isCheckpoint) {
+        const buttonsForFrame = document.querySelectorAll(`.clickable-item[data-checkpoint="${frameIndex}"]`);
+        buttonsForFrame.forEach(btn => btn.classList.add('visible'));
+    }
+}
+
     // --- 6. EVENT LISTENERS ---
     createFrames();
     const frames = document.querySelectorAll('.frame');
@@ -135,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // JS FIX #2: Add the missing listener for the main menu's own close button
+    
     if (closeNavBtn) {
         closeNavBtn.addEventListener('click', closeAllOverlays);
     }
@@ -165,4 +179,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    allClickableItems.forEach(button => {
+    button.addEventListener('click', () => {
+        const buttonId = button.id;
+
+        // Shared functionality
+        if (buttonId.includes('phone')) {
+            alert('Phone button clicked on frame ' + (currentFrame + 1));
+        } else if (buttonId.includes('burger')) {
+            alert('Burger button clicked on frame ' + (currentFrame + 1));
+        }
+
+        // Unique functionality
+        else if (buttonId === 'checkpoint1-unique') {
+            alert('Unique item on checkpoint 1 clicked!');
+        } else if (buttonId === 'checkpoint2-unique') {
+            alert('Unique item on checkpoint 2 clicked!');
+        } else if (buttonId === 'checkpoint3-unique') {
+            alert('Unique item on checkpoint 3 clicked!');
+        }
+    });
+});
 });

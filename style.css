@@ -448,3 +448,32 @@ body.nav-open .header-title {
 .about-text-scroll p {
     line-height: 1.6;
 }
+
+/* This container holds the buttons but doesn't block clicks */
+#clickable-items-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 50; /* Above frames, below arrows */
+    pointer-events: none; /* Allows clicks to pass through */
+}
+
+.clickable-item {
+    position: absolute; /* Allows you to position them freely */
+    display: none; /* Hidden by default */
+    padding: 10px 20px;
+    background-color: rgba(255, 0, 128, 0.7); /* Bright pink so you can see them */
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    pointer-events: auto; /* Makes the buttons themselves clickable */
+    z-index: 51;
+}
+
+/* This class will be added by JavaScript to show the buttons */
+.clickable-item.visible {
+    display: block;
+}
