@@ -1,149 +1,168 @@
 body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow: hidden; /* Prevents default body scrolling */
-            background-color: black;
-        }
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* Prevents default body scrolling */
+    background-color: black;
+}
 
-        .frame-container {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-        }
+:root {
+    --theme-green: #0E6D4F;
+    --ease-out-cubic: cubic-bezier(0.215, 0.610, 0.355, 1);
+}
 
-        .frame {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 5rem;
-            font-weight: bold;
-            color: white;
-            opacity: 0;
-            background-size: cover;
-            background-position: center;
-            /* Add a subtle overlay to make text more readable */
-            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
-        }
+.frame-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
 
-        .frame.active {
-            opacity: 1;
-            z-index: 1;
-        }
+.frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    background-size: cover;
+    background-position: center;
+    /* Add a subtle overlay to make text more readable */
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
+}
 
-        .scroll-indicator {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-size: 0.9rem;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 8px 16px;
-            border-radius: 20px;
-            z-index: 100;
-            animation: bounce 2s infinite;
-        }
+.frame.active {
+    opacity: 1;
+    z-index: 1;
+}
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            40% {
-                transform: translateX(-50%) translateY(-5px);
-            }
-            60% {
-                transform: translateX(-50%) translateY(-2px);
-            }
-        }
+.scroll-indicator {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 0.9rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px 16px;
+    border-radius: 20px;
+    z-index: 100;
+    animation: bounce 2s infinite;
+}
 
-        .frame {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 5rem;
-            font-weight: bold;
-            color: white;
-            opacity: 0;
-            background-size: cover;
-            background-position: center;
-            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
-        }
+@keyframes bounce {
 
-        .frame.active {
-            opacity: 1;
-            z-index: 1;
-        }
-        
-        /* Arrow Navigation Styles */
-        .arrow-nav {
-            position: fixed;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 50;
-            cursor: pointer;
-            background-color: rgba(0, 0, 0, 0.3);
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: background-color 0.3s ease, opacity 0.5s ease;
-        }
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
 
-        .arrow-nav:hover {
-            background-color: rgba(0, 0, 0, 0.6);
-        }
+    40% {
+        transform: translateX(-50%) translateY(-5px);
+    }
 
-        .arrow-nav.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
+    60% {
+        transform: translateX(-50%) translateY(-2px);
+    }
+}
 
-        #prev-arrow {
-            left: 20px;
-        }
+.frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
+}
 
-        #next-arrow {
-            right: 20px;
-        }
+.frame.active {
+    opacity: 1;
+    z-index: 1;
+}
 
-        .arrow-nav svg {
-            width: 24px;
-            height: 24px;
-            stroke: white;
-            stroke-width: 2;
-        }
+/* Arrow Navigation Styles */
+.arrow-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, opacity 0.5s ease;
+}
 
-        /* Header Styles */
+.arrow-nav:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.arrow-nav.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#prev-arrow {
+    left: 20px;
+}
+
+#next-arrow {
+    right: 20px;
+}
+
+.arrow-nav svg {
+    width: 24px;
+    height: 24px;
+    stroke: white;
+    stroke-width: 2;
+}
+
+/* Header Styles */
 .site-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1.5rem 2rem; /* Vertical and horizontal padding */
+    padding: 1.5rem 2rem;
+    /* Vertical and horizontal padding */
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    pointer-events: none; /* Allows clicks to pass through the empty parts of the header */
+    pointer-events: none;
+    /* Allows clicks to pass through the empty parts of the header */
 }
 
-.header-title, .hamburger-menu {
-    pointer-events: auto; /* Makes the title and button clickable again */
-    color: #50E3C2; /* A teal color similar to your example */
-    text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.6); /* Adds a shadow for better readability */
+.header-title,
+.hamburger-menu {
+    pointer-events: auto;
+    /* Makes the title and button clickable again */
+    color: var(--theme-green);
+    /* A teal color similar to your example */
+    text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.6);
+    /* Adds a shadow for better readability */
     transition: opacity 0.3s ease;
 }
 
@@ -162,14 +181,9 @@ body {
 }
 
 .hamburger-menu svg {
-    width: 50px; /* Set a specific size for the icon */
+    width: 50px;
+    /* Set a specific size for the icon */
     height: 50px;
-}
-
-/* --- Root Variables for Menu --- */
-:root {
-    --theme-green: #50E3C2;
-    --ease-out-cubic: cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
 /* --- Required updates for existing elements --- */
@@ -180,7 +194,9 @@ body {
 }
 
 /* Allows the background content to blur smoothly */
-.frame-container, .arrow-nav, .site-header {
+.frame-container,
+.arrow-nav,
+.site-header {
     transition: filter 0.5s ease;
 }
 
@@ -227,7 +243,7 @@ body.nav-open .header-title {
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2rem;
 }
@@ -246,9 +262,11 @@ body.nav-open .header-title {
     cursor: pointer;
     color: white;
 }
+
 .close-nav-btn svg {
-     width: 50px; /* Matches your hamburger icon size */
-     height: 50px;
+    width: 50px;
+    /* Matches your hamburger icon size */
+    height: 50px;
 }
 
 /* Navigation links styling */
@@ -263,14 +281,16 @@ body.nav-open .header-title {
     display: flex;
     align-items: center;
     margin: 1rem 0;
-    overflow: hidden; /* Crucial for slide-in animation */
+    overflow: hidden;
+    /* Crucial for slide-in animation */
 }
 
 .nav-item .line {
     height: 5px;
     background-color: white;
     flex-grow: 1;
-    transform: scaleX(0); /* Initially hidden */
+    transform: scaleX(0);
+    /* Initially hidden */
     transition: transform 0.8s var(--ease-out-cubic);
 }
 
@@ -291,10 +311,13 @@ body.nav-open .header-title {
 
 /* Animation triggers and delays */
 #nav-overlay.active .nav-item .line {
-    transform: scaleX(1); /* Animate line in */
+    transform: scaleX(1);
+    /* Animate line in */
 }
+
 #nav-overlay.active .nav-item a {
-    transform: translateY(0); /* Animate text in */
+    transform: translateY(0);
+    /* Animate text in */
 }
 
 /* FASTER Staggered animation delays */
@@ -302,10 +325,12 @@ body.nav-open .header-title {
 #nav-overlay.active .nav-item:nth-child(1) .line {
     transition-delay: 0.1s;
 }
+
 #nav-overlay.active .nav-item:nth-child(2) a,
 #nav-overlay.active .nav-item:nth-child(2) .line {
     transition-delay: 0.15s;
 }
+
 #nav-overlay.active .nav-item:nth-child(3) a,
 #nav-overlay.active .nav-item:nth-child(3) .line {
     transition-delay: 0.2s;
@@ -324,7 +349,8 @@ body.nav-open .header-title {
     width: 100%;
     height: 100%;
     background-color: #000;
-    z-index: 1002; /* Higher than nav menu to appear on top */
+    z-index: 1002;
+    /* Higher than nav menu to appear on top */
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.5s var(--ease-out-cubic), visibility 0s 0.5s;
@@ -345,6 +371,7 @@ body.nav-open .header-title {
     position: relative;
     z-index: 2;
 }
+
 .page-overlay .close-page-btn svg {
     width: 50px;
     height: 50px;
@@ -365,6 +392,7 @@ body.nav-open .header-title {
     text-decoration: none;
     transition: color 0.2s ease-out;
 }
+
 .gallery-link:hover {
     color: var(--theme-green);
 }
@@ -373,7 +401,8 @@ body.nav-open .header-title {
 .about-content {
     display: flex;
     height: 100%;
-    padding: 8rem 4rem 4rem; /* Top, sides, bottom */
+    padding: 8rem 4rem 4rem;
+    /* Top, sides, bottom */
     gap: 4rem;
 }
 
@@ -385,7 +414,8 @@ body.nav-open .header-title {
 
 .about-image-container {
     width: 100%;
-    padding-bottom: 100%; /* Creates a square aspect ratio */
+    padding-bottom: 100%;
+    /* Creates a square aspect ratio */
     position: relative;
     transform: rotate(-90deg);
 }
@@ -396,18 +426,21 @@ body.nav-open .header-title {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image covers the square area */
+    object-fit: cover;
+    /* Ensures the image covers the square area */
 }
 
 .about-socials {
     margin-top: 2rem;
     color: white;
 }
+
 .about-socials p {
     margin: 1rem 0 0.2rem;
     font-weight: 700;
     color: var(--theme-green);
 }
+
 .about-socials a {
     color: white;
     text-decoration: none;
@@ -417,7 +450,8 @@ body.nav-open .header-title {
     flex-basis: 65%;
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Important for scrolling */
+    overflow: hidden;
+    /* Important for scrolling */
 }
 
 .about-header {
@@ -426,13 +460,16 @@ body.nav-open .header-title {
     text-transform: uppercase;
     letter-spacing: 1.5px;
     color: var(--theme-green);
-    flex-shrink: 0; /* Prevents header from shrinking */
+    flex-shrink: 0;
+    /* Prevents header from shrinking */
 }
 
 .about-text-scroll {
-    overflow-y: auto; /* Enables vertical scrolling */
+    overflow-y: auto;
+    /* Enables vertical scrolling */
     color: white;
-    padding-right: 2rem; /* Prevents scrollbar from touching text */
+    padding-right: 2rem;
+    /* Prevents scrollbar from touching text */
 }
 
 .about-text-scroll h4 {
@@ -440,11 +477,13 @@ body.nav-open .header-title {
     font-weight: 700;
     margin-top: 2rem;
 }
+
 .about-text-scroll h5 {
     font-weight: 700;
     color: var(--theme-green);
     margin-top: 1rem;
 }
+
 .about-text-scroll p {
     line-height: 1.6;
 }
@@ -455,8 +494,10 @@ body.nav-open .header-title {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* The key property */
-    z-index: 1; /* Places the image below the buttons */
+    object-fit: cover;
+    /* The key property */
+    z-index: 1;
+    /* Places the image below the buttons */
 }
 
 /* This new container will hold the buttons and sit perfectly over the image */
@@ -466,79 +507,94 @@ body.nav-open .header-title {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 2; /* On top of the image */
-    pointer-events: none; /* Allows mouse wheel to scroll through empty space */
+    z-index: 2;
+    /* On top of the image */
+    pointer-events: none;
+    /* Allows mouse wheel to scroll through empty space */
 }
 
 /* Ensure clickable-items are still clickable */
 .clickable-item {
     /* Positioning */
-    position: absolute; /* This is essential for top/left to work */
+    position: absolute;
+    /* This is essential for top/left to work */
 
     /* Visibility & Style (so you can see them) */
     opacity: 0;
-    background-color: rgba(22, 222, 22, 0.5); /* A green color for visibility */
+    background-color: rgba(22, 222, 22, 0.5);
+    /* A green color for visibility */
     color: white;
     border: 1px solid white;
     border-radius: 5px;
     padding: 8px 12px;
     font-size: 14px;
-    
+
     /* Interactivity */
     cursor: pointer;
-    pointer-events: auto; /* This ensures the button is always clickable */
+    pointer-events: auto;
+    /* This ensures the button is always clickable */
 }
 
 #phone-1 {
     top: 54%;
     left: 64%;
 }
+
 #burger-1 {
     top: 45%;
     left: 31.5%;
     padding: 10px 6px;
 }
+
 #unique-1 {
     top: 23%;
     left: 32%;
     padding: 60px 90px;
 }
+
 #phone-2 {
     top: 51%;
     left: 33%;
 }
+
 #burger-2 {
     top: 41.5%;
     left: 48%;
     padding: 12px 5px;
 }
+
 #unique-2 {
     top: 25%;
     left: 60%;
     transform: rotate(7deg);
     padding: 220px 50px;
 }
+
 #phone-3 {
     top: 70%;
     left: 49.7%;
     padding: 5px 4px;
 }
+
 #burger-3 {
     top: 57%;
     left: 41%;
     padding: 12px 5px;
 }
+
 #unique-3 {
     top: 30%;
     left: 62%;
     transform: rotate(7deg);
     padding: 50px 50px;
 }
+
 #phone-4 {
     top: 58%;
     left: 41.5%;
     padding: 5px 3px;
 }
+
 #burger-4 {
     top: 68%;
     left: 57%;
@@ -549,31 +605,337 @@ body.nav-open .header-title {
     display: none;
 }
 
+#unique1-page {
+    overflow-y: auto;
+}
+
+/* Styles for the new page's fixed header */
+.page-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    z-index: 1005;
+    /* Ensures it's on top */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+}
+
+.page-header h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--theme-green);
+}
+
+.page-header .close-page-btn svg {
+    width: 32px;
+    height: 32px;
+}
+
+/* Styles for the content area */
+.page-content {
+    width: 100%;
+}
+
+/* Styles for the full-width hero image */
+.image-hero {
+    position: relative;
+    width: 100%;
+    height: 99vh;
+    padding-top: 100px;
+}
+
+.image-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* Styles for the text over the image */
+.image-text-overlay {
+    position: absolute;
+    bottom: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8%;
+    font-size: 82px;
+    line-height: 72px;
+    font-weight: 900;
+}
+
+/* Placeholder style for the content below the image */
+.more-content {
+    padding: 2rem 15%;
+    color: white;
+}
+
+.image-hero-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* This creates the dark overlay that fades in on hover */
+.image-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Black with 50% opacity */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    /* Smooth fade effect */
+    cursor: pointer;
+}
+
+/* When you hover over the image hero, the overlay becomes visible */
+.image-hero:hover::after {
+    opacity: 1;
+}
+
+.image-grid {
+    display: grid;
+    /* Create two columns of equal width */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 2rem; /* The space between grid items */
+    padding: 2rem 0;
+}
+
+.grid-item {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.grid-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+}
+
+.grid-item:hover img {
+    transform: scale(1.05); /* Zoom in slightly on hover */
+}
+
+.grid-item-title {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+#char-design-page {
+    overflow-y: auto; /* Make the page scrollable */
+}
+
+.char-design-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Create a 2-column grid */
+    gap: 2rem;
+    padding: 8rem 5% 4rem; /* Top, sides, bottom padding */
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* --- Grid Item Styles --- */
+.grid-text {
+    grid-column: 1 / 2; /* Span from column line 1 to 2 */
+    color: white;
+    font-size: 1.2rem;
+}
+
+.grid-static-image {
+    grid-column: 1 / 2;
+}
+.grid-static-image-bottom {
+    grid-column: 1 / 3; /* Make this one span both columns */
+    text-align: center;
+}
+.grid-static-image img,
+.grid-static-image-bottom img {
+    max-width: 50%;
+    height: auto;
+}
+.grid-static-image-bottom{
+    max-width:80%;
+}
+
+
+/* --- Hover-to-Play GIF Styles --- */
+.grid-gif-container {
+    grid-column: 2 / 3; /* Place in the second column */
+    grid-row: 1 / 3; /* Make it span two rows to be taller */
+    position: relative;
+    color: white;
+    text-align: center;
+}
+.grid-gif-container .gif-static,
+.grid-gif-container .gif-animated {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+.grid-gif-container .gif-static {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+.grid-gif-container:hover .gif-static {
+    opacity: 0; /* Hide static image on hover to reveal GIF */
+}
+.grid-gif-container span {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* --- Click-to-Play Video Styles --- */
+.grid-video-container {
+    grid-column: 2 / 3;
+    position: relative;
+    cursor: pointer;
+}
+.video-player {
+    width: 100%;
+    display: block;
+}
+.video-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.video-play-button svg {
+    fill: white;
+    width: 50%;
+    height: 50%;
+    margin-left: 10%;
+}
+.grid-video-container:hover .video-play-button {
+    background: rgba(0, 0, 0, 0.8);
+}
+/* Hide play button when video is playing */
+.grid-video-container.video-playing .video-play-button {
+    display: none;
+}
+
+#prod-concepts-page {
+    overflow-y: auto; /* Make the page scrollable */
+}
+
+.prod-concepts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Create a 2-column grid */
+    gap: 3rem;
+    padding: 8rem 5% 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center; /* Vertically align items in the middle of each row */
+}
+
+.prod-concepts-grid .grid-images {
+    display: flex;
+    gap: 1rem;
+}
+
+.prod-concepts-grid .grid-images img {
+    width: 50%;
+    height: auto;
+}
+
+.prod-concepts-grid .grid-text {
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.prod-concepts-grid .grid-images.left {
+    grid-column: 1 / 2; /* Place in the first column */
+}
+.prod-concepts-grid .grid-text.right {
+    grid-column: 2 / 3; /* Place in the second column */
+}
+
+/* This rule is for the second row of items */
+.prod-concepts-grid .grid-text.left {
+    grid-column: 1 / 2; /* Place in the first column */
+}
+.prod-concepts-grid .grid-images.right {
+    grid-column: 2 / 3; /* Place in the second column */
+}
+
+.hover-gif-container {
+    position: relative;
+    width: 50%; /* Each gif container takes up half the space */
+}
+
+.hover-gif-container .gif-static,
+.hover-gif-container .gif-animated {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hover-gif-container .gif-static {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    z-index: 2; /* Keep the static image on top */
+}
+
+.hover-gif-container:hover .gif-static {
+    opacity: 0; /* Hide static image on hover to reveal GIF */
+}
+
 
 /* --- Tablet Adjustments (768px to 1024px) --- */
 @media (max-width: 1024px) {
-    
+
     #phone-1 {
-        top: 53%; 
+        top: 53%;
         left: 70%;
     }
+
     #burger-1 {
-        top: 45%; 
+        top: 45%;
         left: 22.5%;
     }
-    #unique-1{
-        top:25%;
-        left:23%;
+
+    #unique-1 {
+        top: 25%;
+        left: 23%;
     }
 
     #phone-2 {
-        top: 50%; 
+        top: 50%;
         left: 24.5%;
     }
+
     #burger-2 {
-        top: 42%; 
+        top: 42%;
         left: 46.5%;
     }
+
     #unique-2 {
         top: 28%;
         left: 64%;
@@ -581,24 +943,27 @@ body.nav-open .header-title {
     }
 
     #phone-3 {
-        top: 67%; 
+        top: 67%;
         left: 49%;
     }
+
     #burger-3 {
-        top: 56%; 
+        top: 56%;
         left: 36.5%;
     }
-    #unique-3{
-        left:66%;
-        top:32%;
+
+    #unique-3 {
+        left: 66%;
+        top: 32%;
     }
 
     #phone-4 {
-        top: 57%; 
+        top: 57%;
         left: 37.5%;
     }
+
     #burger-4 {
-        top: 65%; 
+        top: 65%;
         left: 59.5%;
     }
 }
@@ -608,84 +973,101 @@ body.nav-open .header-title {
 @media (max-width: 767px) {
 
     #phone-1 {
-        top: 53%; 
+        top: 53%;
         left: 79.5%;
         padding: 15px 15px;
     }
+
     #burger-1 {
-        top: 45%; 
+        top: 45%;
         left: 9%;
         padding: 15px 15px;
     }
-    #unique-1{
-        top:25%;
-        left:10%;
+
+    #unique-1 {
+        top: 25%;
+        left: 10%;
         padding: 65px 105px;
     }
 
     #phone-2 {
-        top: 49%; 
+        top: 49%;
         left: 13%;
         padding: 15px 15px;
     }
+
     #burger-2 {
-        top: 42%; 
+        top: 42%;
         left: 44%;
         padding: 15px 15px;
     }
+
     #unique-2 {
         top: 28%;
         left: 68%;
-        padding: 190px 65px; 
+        padding: 190px 65px;
     }
 
     #phone-3 {
-        top: 66%; 
+        top: 66%;
         left: 48%;
         padding: 15px 15px;
     }
+
     #burger-3 {
-        top: 56%; 
+        top: 56%;
         left: 29%;
         padding: 15px 15px;
     }
-    #unique-3{
-        left:75%;
-        top:32%;
+
+    #unique-3 {
+        left: 75%;
+        top: 32%;
     }
 
     #phone-4 {
-        top: 56%; 
+        top: 56%;
         left: 30%;
         padding: 15px 15px;
     }
+
     #burger-4 {
-        top: 65%; 
+        top: 65%;
         left: 63%;
         padding: 15px 15px;
     }
-    
+
     .frame img {
         object-fit: contain;
         transform: scale(2.3);
     }
+
     .frame:not(:has(img)) {
         background-size: contain;
         background-repeat: no-repeat;
-        transform: scale(2.3); /* This MUST match the scale value above */
+        transform: scale(2.3);
+        /* This MUST match the scale value above */
     }
 
-    html, body {
+    html,
+    body {
         overflow: hidden;
     }
 
-    .arrow-nav{
-        top:73%;
+    .arrow-nav {
+        top: 73%;
     }
+
     .desktop-indicator {
         display: none;
     }
+
     .mobile-indicator {
         display: block;
+    }
+
+    .image-grid {
+        /* On phones, stack the images in a single column */
+        grid-template-columns: 1fr; 
     }
 }

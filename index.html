@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <link rel="preload" as="image" href="assets/0006.webp">
     <script src="app.js"></script>
 </head>
+
 <body>
 
     <header class="site-header">
@@ -26,19 +28,25 @@
     </header>
 
     <div class="frame-container">
-        </div>
+    </div>
 
     <div id="prev-arrow" class="arrow-nav">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
     </div>
     <div id="next-arrow" class="arrow-nav">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
     </div>
-    
+
     <div id="nav-overlay">
         <div class="nav-top">
-             <button class="close-nav-btn" aria-label="Close menu">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            <button class="close-nav-btn" aria-label="Close menu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
             </button>
             <h2>MENU</h2>
         </div>
@@ -58,66 +66,220 @@
         </ul>
     </div>
     <!-- New: Gallery Page HTML -->
-<div id="gallery-page" class="page-overlay">
-    <div class="nav-top">
-        <button class="close-page-btn" data-target-page="gallery-page" aria-label="Close Gallery">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-        </button>
-        <h2>GALLERY</h2>
-    </div>
-    <div class="gallery-content">
-        <a href="#" class="gallery-link" style="top: 25%; left: 15%;">3D</a>
-        <a href="#" class="gallery-link" style="top: 45%; left: 25%;">BRANDING</a>
-        <a href="#" class="gallery-link" style="top: 65%; left: 55%;">PHOTO</a>
-        <a href="#" class="gallery-link" style="top: 80%; left: 70%;">DUMP</a>
-    </div>
-</div>
-
-<!-- New: About Me Page HTML -->
-<div id="about-page" class="page-overlay">
-    <div class="nav-top">
-        <button class="close-page-btn" data-target-page="about-page" aria-label="Close About Me">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-        </button>
-    </div>
-    <div class="about-content">
-        <div class="about-left">
-            <div class="about-image-container">
-                <img src="assets/pfp.png" alt="A portrait of the site owner">
-            </div>
-            <div class="about-socials">
-                <p>E-MAIL</p>
-                <a href="mailto:niniaturra@gmail.com">niniaturra@gmail.com</a>
-                <p>INSTAGRAM</p>
-                <a href="#">@niniaturra</a>
-                <p>LINKEDIN</p>
-                <a href="#">Nini Archvadze</a>
-            </div>
+    <div id="gallery-page" class="page-overlay">
+        <div class="nav-top">
+            <button class="close-page-btn" data-target-page="gallery-page" aria-label="Close Gallery">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h2>GALLERY</h2>
         </div>
-        <div class="about-right">
-            <h3 class="about-header">ME ME ME ME ME ME</h3>
+        <div class="gallery-content">
+            <a href="#" class="gallery-link" style="top: 25%; left: 15%;">3D</a>
+            <a href="#" class="gallery-link" style="top: 45%; left: 25%;">BRANDING</a>
+            <a href="#" class="gallery-link" style="top: 65%; left: 55%;">PHOTO</a>
+            <a href="#" class="gallery-link" style="top: 80%; left: 70%;">DUMP</a>
+        </div>
+    </div>
+
+    <!-- New: About Me Page HTML -->
+    <div id="about-page" class="page-overlay">
+        <div class="nav-top">
+            <button class="close-page-btn" data-target-page="about-page" aria-label="Close About Me">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="about-content">
+            <div class="about-left">
+                <div class="about-image-container">
+                    <img src="assets/pfp.png" alt="A portrait of the site owner">
+                </div>
+                <div class="about-socials">
+                    <p>E-MAIL</p>
+                    <a href="mailto:niniaturra@gmail.com">niniaturra@gmail.com</a>
+                    <p>INSTAGRAM</p>
+                    <a href="#">@niniaturra</a>
+                    <p>LINKEDIN</p>
+                    <a href="#">Nini Archvadze</a>
+                </div>
+            </div>
+            <div class="about-right">
+                <h3 class="about-header">ME ME ME ME ME ME</h3>
                 <div class="about-text-scroll">
                     <h4>I'm Nini Archvadze</h4>
-                    <p>A Visual Communications student. My main interest area is everything 3D Design and Animation. Photography, Graphic Design & Branding all rank second place.</p>
-                
+                    <p>A Visual Communications student. My main interest area is everything 3D Design and Animation.
+                        Photography, Graphic Design & Branding all rank second place.</p>
+
                     <h4>My Skillset</h4>
                     <h5>ADVANCED</h5>
                     <p>Adobe Photoshop<br>Adobe Illustrator</p>
-                
+
                     <h5>INTERMEDIATE</h5>
                     <p>Blender 3D<br>Adobe Premiere Pro<br>Adobe After Effects</p>
 
                     <h5>BEGINNER</h5>
                     <p>Nomad Sculpt</p>
 
-                    <p>I enjoy working in creative teams. I love learning new things. And I'm very passionate about what I do!</p>
+                    <p>I enjoy working in creative teams. I love learning new things. And I'm very passionate about what
+                        I do!</p>
                 </div>
             </div>
         </div>
     </div>
+    <div id="unique1-page" class="page-overlay">
+        <header class="page-header">
+            <button class="close-page-btn" aria-label="Close 3D Gallery">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h2>3D GALLERY</h2>
+        </header>
+
+        <div class="page-content">
+            <div class="image-hero">
+                <a href="#" id="hero-image-link" class="image-hero-link">
+                    <img src="assets/itsus.webp" alt="It's Us artwork">
+                </a>
+                <div class="image-text-overlay">
+                    <span style="color: #F4611C">"IT'S</span>
+                    <span style="color: rgb(40, 202, 178)">US"</span>
+                </div>
+            </div>
+
+            <div class="scroll-indicator desktop-indicator">Scroll To Explore</div>
+            <div class="more-content">
+
+                <div class="image-grid">
+
+                    <a href="#" id="open-char-design-btn" class="grid-item">
+                        <img src="assets/characterdesign.webp" alt="Character Design">
+                        <span class="grid-item-title">Character Design</span>
+                    </a>
+
+                    <a href="#" id="open-prod-concepts-btn" class="grid-item">
+                        <img src="assets/productconcepts.webp" alt="Product Concepts">
+                        <span class="grid-item-title">Product Concepts</span>
+                    </a>
+
+                    <a href="#" class="grid-item">
+                        <img src="assets/learningprocess.webp" alt="Learning Process">
+                        <span class="grid-item-title">Learning Process</span>
+                    </a>
+
+                    <a href="#" class="grid-item">
+                        <img src="assets/clumsy witch.webp" alt="Clumsy Witch">
+                        <span class="grid-item-title">"Clumsy Witch"</span>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="char-design-page" class="page-overlay">
+        <header class="page-header">
+            <button class="close-page-btn" aria-label="Close Character Design">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h2>CHARACTER DESIGN</h2>
+        </header>
+
+        <div class="page-content char-design-grid">
+
+            <div class="grid-text">
+                <p>No explanations,<br>Just characters I've sketched.</p>
+            </div>
+
+            <div class="grid-static-image">
+                <img src="assets/pinkcharacter.webp" alt="Pink character sketch">
+            </div>
+
+            <div class="grid-gif-container">
+                <img class="gif-static" src="https://placehold.co/600x400/1a1a1a/fff?text=Static+Image"
+                    alt="Mask character static">
+                <img class="gif-animated" src="" alt="Mask character animated">
+                <span>&lt;Hover to spin&gt;</span>
+            </div>
+
+            <div class="grid-video-container">
+                <video class="video-player" poster="https://placehold.co/600x400/1a1a1a/fff?text=Video+Poster">
+                    <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                        type="video/mp4">
+                </video>
+                <button class="video-play-button" aria-label="Play Video">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="grid-static-image-bottom">
+                <img src="assets/something.webp" alt="Acorn hair character">
+            </div>
+
+        </div>
+    </div>
+    <div id="prod-concepts-page" class="page-overlay">
+        <header class="page-header">
+            <button class="close-page-btn" aria-label="Close Product Concepts">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h2>PRODUCT CONCEPTS</h2>
+        </header>
+
+        <div class="page-content prod-concepts-grid">
+
+            <!-- Row 1: Images on the left, text on the right -->
+            <div class="grid-images left">
+                <!-- Image 1 (Static) -->
+                <img src="https://placehold.co/400x500/1a1a1a/fff?text=Static+Image" alt="Water pistol concept">
+
+                <!-- Image 2 (Hover GIF) -->
+                <div class="hover-gif-container">
+                    <img class="gif-static" src="https://placehold.co/400x500/1a1a1a/fff?text=Poster+Image"
+                        alt="Water pistol static">
+                    <img class="gif-animated"
+                        src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDBxd2NhaXl6eG1wYjZ1eGgyb3E4amYybXN1dGhsZ3R2ZzBqajJnayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3vR1tookIhM6nLd6/giphy.gif"
+                        alt="Water pistol animated">
+                </div>
+            </div>
+            <div class="grid-text right">
+                <p>This is a concept of a Citrus Vodka Water Pistol®</p>
+                <p>For summer festivals, to bring back the joy of having water fights & drinking out of toy guns, just
+                    cause.</p>
+            </div>
+
+            <!-- Row 2: Text on the left, images on the right -->
+            <div class="grid-text left">
+                <p>This piece is from a random sketch I did and liked as an earring idea.</p>
+            </div>
+            <div class="grid-images right">
+                <!-- Image 1 (Hover GIF) -->
+                <div class="hover-gif-container">
+                    <img class="gif-static" src="https://placehold.co/400x500/1a1a1a/fff?text=Poster+Image"
+                        alt="Earring static">
+                    <img class="gif-animated"
+                        src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDBxd2NhaXl6eG1wYjZ1eGgyb3E4amYybXN1dGhsZ3R2ZzBqajJnayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3vR1tookIhM6nLd6/giphy.gif"
+                        alt="Earring animated">
+                </div>
+
+                <!-- Image 2 (Static) -->
+                <img src="https://placehold.co/400x500/1a1a1a/fff?text=Static+Image" alt="Earring concept detail">
+            </div>
+
+        </div>
+    </div>
 
     <div class="scroll-indicator desktop-indicator">Scroll To Explore</div>
-    <div class="scroll-indicator mobile-indicator">Use Arrows To Explore</div>
+    <div class="scroll-indicator mobile-indicator">Glowing items are clickable!</div>
 
 </body>
+
 </html>
